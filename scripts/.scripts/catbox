@@ -1,0 +1,1 @@
+curl -F "reqtype=fileupload" -F "userhash=####" -F "fileToUpload=@$1" https://catbox.moe/user/api.php | xclip -selection primary && xclip -o

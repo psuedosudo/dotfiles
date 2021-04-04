@@ -1,0 +1,2 @@
+curl -F "upload=@$1" https://v2.femto.pw/upload | jq -r '.data .short' | awk -F',' '{print "https://femto.pw/"$1}' | xclip -selection primary && xclip -o
+

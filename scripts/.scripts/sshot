@@ -1,0 +1,15 @@
+#!/bin/bash
+case $1 in
+
+	whole)
+		scrot ~/Screenshots/%Y.%m.%d-%H%M%S.png -e 'xclip -selection clipboard -t image/png -i $f'
+		;;
+
+	window)
+		scrot ~/Screenshots/%Y.%m.%d-%H%M%S.png -ue 'xclip -selection clipboard -t image/png -i $f'
+		;;
+
+	select)
+		scrot ~/Screenshots/%Y.%m.%d-%H%M%S.png -se 'xclip -selection clipboard -t image/png -i $f'
+		;;
+esac

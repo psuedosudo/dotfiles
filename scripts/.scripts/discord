@@ -1,0 +1,3 @@
+pgrep Discord | while read -r line ; do kill -9 $line ; done
+/opt/DiscordCanary/Discord
+

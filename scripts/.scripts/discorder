@@ -1,0 +1,1 @@
+ffmpeg -f pulse -i input.monitor -f pulse -i callaudio.monitor -filter_complex amix=inputs=2:duration=longest ~/calls/$(date +CALL_%Y.%m.%d-%H%M%S.ogg)

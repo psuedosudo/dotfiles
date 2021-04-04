@@ -1,0 +1,2 @@
+xsetwacom set Wacom\ Intuos\ PT\ S\ 2\ Pen\ stylus MapToOutput HEAD-0
+xsetwacom set Wacom\ Intuos\ PT\ S\ 2\ Pen\ stylus Area 3800 1900 7600 4750
