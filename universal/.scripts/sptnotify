@@ -1,0 +1,27 @@
+#!/bin/bash
+
+title=`dbus-send --print-reply --dest=org.mpris.MediaPlayer2.ncspot /org/mpris/MediaPlayer2 org.freedesktop.DBus.Properties.Get string:'org.mpris.MediaPlayer2.Player' string:'Metadata'|egrep -A 1 "title"|cut -b 44-|cut -d '"' -f 1|egrep -v ^$`
+if [[ ! $title == '' ]]; then
+  artist=`dbus-send --print-reply --dest=org.mpris.MediaPlayer2.ncspot /org/mpris/MediaPlayer2 org.freedesktop.DBus.Properties.Get string:'org.mpris.MediaPlayer2.Player' string:'Metadata'|egrep -A 2 "artist"|cut -b 20-|cut -d '"' -f 2|egrep -v ^$|egrep -v array|egrep -v artist`
+  image=`dbus-send --print-reply --dest=org.mpris.MediaPlayer2.ncspot /org/mpris/MediaPlayer2 org.freedesktop.DBus.Properties.Get string:'org.mpris.MediaPlayer2.Player' string:'Metadata'|egrep -A 1 "image" | awk '{print $3}'| cut -d '"' -f 2`
+  rm /tmp/sptimage ; curl $image -o /tmp/sptimage
+  notify-send -t 3500 -i /tmp/sptimage -a Spotify "Now Playing:
+  Artist: $artist
+  Song: $title"
+fi
+
+while [[ True ]]; do
+  current=`dbus-send --print-reply --dest=org.mpris.MediaPlayer2.ncspot /org/mpris/MediaPlayer2 org.freedesktop.DBus.Properties.Get string:'org.mpris.MediaPlayer2.Player' string:'Metadata'|egrep -A 1 "title"|cut -b 44-|cut -d '"' -f 1|egrep -v ^$`
+  if [[ ( ! $current == $title ) && ( ! $current == '' ) && ( ! $title == '' ) ]]; then
+    title=$current
+    artist=`dbus-send --print-reply --dest=org.mpris.MediaPlayer2.ncspot /org/mpris/MediaPlayer2 org.freedesktop.DBus.Properties.Get string:'org.mpris.MediaPlayer2.Player' string:'Metadata'|egrep -A 2 "artist"|cut -b 20-|cut -d '"' -f 2|egrep -v ^$|egrep -v array|egrep -v artist`
+    image=`dbus-send --print-reply --dest=org.mpris.MediaPlayer2.ncspot /org/mpris/MediaPlayer2 org.freedesktop.DBus.Properties.Get string:'org.mpris.MediaPlayer2.Player' string:'Metadata'|egrep -A 1 "image" | awk '{print $3}'| cut -d '"' -f 2`
+    rm /tmp/sptimage ; curl $image -o /tmp/sptimage
+
+    notify-send -t 3500 -i /tmp/sptimage -a Spotify "Now Playing:
+    Artist: $artist
+    Song: $title"
+
+  fi
+  sleep 1
+done

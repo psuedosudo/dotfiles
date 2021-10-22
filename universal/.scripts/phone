@@ -1,0 +1,7 @@
+tmux \
+  new-session -n phone 'scrcpy --stay-awake --window-borderless --turn-screen-off' \; \
+  new-window -n phone-audio 'sndcpy'\;
+
+
+
+

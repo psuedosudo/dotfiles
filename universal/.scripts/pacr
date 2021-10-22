@@ -1,0 +1,5 @@
+pulseaudio -k
+sleep 2
+#headphones
+pactl load-module module-loopback source=unifiedaudio.monitor sink=bluez_sink.AB_CD_EF_01_07_22.a2dp_sink latency_msec=1
+

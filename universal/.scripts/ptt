@@ -1,0 +1,22 @@
+#!/bin/bash
+
+yeti=alsa_input.usb-Blue_Microphones_Yeti_Stereo_Microphone-00.analog-stereo
+snowflake=alsa_input.usb-Blue_Blue_Snowflake-00.multichannel-input
+
+mics=("$yeti" "$snowflake")
+
+for i in "${mics[@]}"; do
+  if [[ ! "$(pactl list sources | grep $i)" == "" ]]; then
+    current="$i"
+    break
+  fi
+done
+
+case $1 in
+  on)
+    pactl set-source-mute "$current" false
+    ;;
+  off)
+    pactl set-source-mute "$current" true
+    ;;
+esac

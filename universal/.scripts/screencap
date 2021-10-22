@@ -1,0 +1,27 @@
+#!/bin/bash
+
+if [ $(pgrep -f 'ffmpeg -thread_queue_size') ]
+then
+	pgrep -f 'ffmpeg -thread_queue_size' | while read -r line ; do kill $line ; done
+else
+
+	file=~/Videos/Screencaps/$(date +GAME_%Y.%m.%d-%H%M%S.mp4)
+	notify-send -a Screencorder 'Recording Started' 'Run again to end recording.'
+	case $1 in
+		-m)
+			ffmpeg -thread_queue_size 1024 -r 30 -video_size 1366x768 -f x11grab -i :0.0 -f pulse -ac 2 -i gameaudio.monitor -f pulse -ac 2 -i musicaudio.monitor -filter_complex amix=inputs=2:duration=longest -codec:v libx264 -quality best -pix_fmt yuv420p $file
+			;;
+		-g)
+			ffmpeg -thread_queue_size 1024 -r 30 -video_size 1366x768 -f x11grab -i :0.0 -f pulse -ac 2 -i gameaudio.monitor -codec:v libx264 -quality best -pix_fmt yuv420p $file
+			;;
+		-b)
+			ffmpeg -thread_queue_size 1024 -r 30 -video_size 1366x768 -f x11grab -i :0.0 -f pulse -ac 2 -i browseraudio.monitor -codec:v libx264 -quality best -pix_fmt yuv420p $file
+			;;
+		*)
+			ffmpeg -thread_queue_size 1024 -r 30 -video_size 1366x768 -f x11grab -i :0.0 -f pulse -ac 2 -i unifiedaudio.monitor -codec:v libx264 -quality best -pix_fmt yuv420p $file
+			;;
+	
+	esac
+	notify-send -a Screencorder 'Recording Ended.' "Your recording is now in $file."
+	echo -n $file | xclip -selection primary
+fi
