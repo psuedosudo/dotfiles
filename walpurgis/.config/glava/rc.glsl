@@ -13,7 +13,7 @@
    as a 2D sampler.
    
    See documentation for more details. */
-#request mod bars
+#request mod bars 
 
 /* Window hints */
 #request setfloating  false
@@ -48,7 +48,7 @@
 #request settitle "GLava"
 
 /* Window geometry (x, y, width, height) */
-#request setgeometry 0 0 1366 768
+#request setgeometry 240 1080 1440 900
 
 /* Window background color (RGB format).
    Does not work with `setopacity "xroot"` */
@@ -68,7 +68,7 @@
    will do nothing, but you can use "!+" and "!-" to stack on top
    or below other windows.
 */
-#request setxwintype "!+"
+#request setxwintype "!-"
 
 /* (X11 only) EWMH Window state atoms (multiple can be specified).
    Possible values are:

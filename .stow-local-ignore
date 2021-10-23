@@ -1,4 +1,4 @@
-#.gitignore
+#.stow-local-ignore
 
 # generic python data
 __pycache__/
@@ -9,4 +9,5 @@ userstate.cbor
 
 # nvim plugin install data
 plugged/
+
 
