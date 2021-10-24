@@ -109,6 +109,10 @@ set mouse=a
 set splitbelow splitright
 
 set colorcolumn=90
+set wrap
+set linebreak
+set textwidth=0
+set wrapmargin=0
 
 autocmd InsertEnter * norm zz
 autocmd BufWritePre * %s/\s+$//e
