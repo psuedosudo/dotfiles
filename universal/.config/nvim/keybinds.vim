@@ -5,11 +5,12 @@ let mapleader = " "
 """"""""""""""""""""""""""
 
 " Browse airline tabs
-nnoremap <C-p> :tabNext<CR>
-nnoremap <C-o> :tabprevious<CR>
+nnoremap <C-p> :bn<CR>
+nnoremap <C-o> :bp<CR>
 
 " Comment block
-vnoremap <silent> <C-k> :Commentary<cr>
+" vnoremap <silent> <C-k> :Commentary<cr>
+map <leader>k :Commentary<cr>
 
 " Select all
 map <C-a> <esc>ggVG<CR>
