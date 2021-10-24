@@ -1,3 +1,4 @@
+
 """""""""""""""""""""""""""
 " Plugins 
 """""""""""""""""""""""""""
@@ -57,9 +58,18 @@ set nocindent
 set cursorline
 set cursorcolumn
 
+" Concealment settings
+" set concealcursor=""
+let g:indentLine_concealcursor=""
+let g:indentLine_conceallevel=2
+" let g:vimwiki_conceallevel=0
+
+" let g:indentLine_setConceal=1
+" let g:indentLine_concealcursor="incv"
+
 " Speed optimization
-set ttyfast
-set lazyredraw
+" set ttyfast
+" set lazyredraw
 
 " Theme
 "set background=dark
