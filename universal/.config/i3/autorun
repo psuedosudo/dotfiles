@@ -1,0 +1,19 @@
+# i3 config file (v4)
+
+#exec --no-startup-id feh --bg-scale /home/lll/.wallpaper.png
+exec --no-startup-id feh --bg-fill /home/lll/.wallpapers/img/1612486940878.jpg
+
+# Auto-exec Block
+exec --no-startup-id picom
+exec --no-startup-id dunst -config
+exec --no-startup-id /lib/kdeconnectd
+exec --no-startup-id kdeconnect-indicator
+exec --no-startup-id barrier
+exec --no-startup-id redshift -l 32.5365:-94.9427 -t 5700:2400
+exec --no-startup-id batmon
+exec --no-startup-id sptnotify
+
+# xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
+# screfn before suspend. Use loginctl lock-session to lock your screen.
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+
