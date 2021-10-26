@@ -2,12 +2,12 @@ color=#a491d3
 command=echo `blocks/$BLOCK_NAME`
 
 [bandwidth]
-instance=enp4s0;in
+instance=in
 label=
 interval=1
 
 [bandwidth]
-instance=enp4s0;out
+instance=out
 label=
 interval=1
 
