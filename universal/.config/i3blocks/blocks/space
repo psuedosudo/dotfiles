@@ -29,10 +29,6 @@ fi
 
 if [[ "${VALUE}" ]]; then
   name=`echo "${INSTANCE}" | tr "/" " " | awk '{print $NF}'`
-  if [[ "$name" == $(whoami) ]]; then 
-    name="Home" 
-  fi
-
   echo " $name ${VALUE}"
   # echo "${VALUE}"
   echo ""

@@ -24,11 +24,15 @@ instance=mem;free
 interval=30
 
 [space]
-instance=/home/lll;free
+instance=/dev/sda3;free
 interval=60
 
 [space]
-instance=/home/lll/Games;free
+instance=/dev/sda4;free
+interval=60
+
+[space]
+instance=/dev/sdc1;free
 interval=60
 
 [network]
