@@ -17,5 +17,6 @@ configs.setup({
 vim.keymap.set('n', '<leader> ', builtin.find_files, {})
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 vim.keymap.set('n', '<C-n>', ':Neotree filesystem reveal left<CR>')
--- vim.keymap.set('n', '<
+vim.keymap.set('n', '<leader>f', ':bn<CR>')
+vim.keymap.set('n', '<leader>b', ':bp<CR>')
 

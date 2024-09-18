@@ -1,4 +1,5 @@
 #.gitignore
+lazy-lock.json
 
 # generic python data
 __pycache__/
