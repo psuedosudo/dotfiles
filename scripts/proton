@@ -6,6 +6,7 @@
 # Usage: proton <path-to-executable>
 #
 # Taken from: https://gist.github.com/shmup/4e7050d50e1db2e9fc4071bf31efa934
+# Lightly edited by Magus
 
 PROTON_ROOT="$HOME/.proton"
 STEAM_ROOT="$HOME/.steam/root"

@@ -1,0 +1,5 @@
+ #!/bin/bash
+ip -4 -j addr show \
+| jq '[ .[] | select( .ifname | startswith("tun")) | [ .ifname, .addr_info[0].local ]  ]'\
+| jq '[ .[] | join(" ") ]' \
+| jq -r 'join(", ")'\
