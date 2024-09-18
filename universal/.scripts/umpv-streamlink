@@ -1,6 +1,0 @@
-#!/bin/bash
-stream_link=`streamlink --stream-url $1 720p`
-echo '{ "command": ["playlist-play-index", "none"] }' | socat - ~/.umpv_socket
-echo '{ "command": ["set_property", "pause", false] }' | socat - ~/.umpv_socket
-echo "{ \"command\": [\"loadfile\", \"$stream_link\", \"append-play\"] }" | socat - ~/.umpv_socket
-

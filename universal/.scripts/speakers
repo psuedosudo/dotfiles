@@ -1,5 +1,0 @@
-bluetoothctl power on 
-bluetoothctl connect A0:E9:DB:01:F3:B0
-sleep 3
-pactl load-module module-loopback source=unifiedaudio.monitor sink=bluez_sink.A0_E9_DB_01_F3_B0.a2dp_sink latency_msec=1
-

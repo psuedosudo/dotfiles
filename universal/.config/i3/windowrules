@@ -1,7 +1,0 @@
-# i3 config file (v4)
-
-for_window [class="wine"] floating enabled
-for_window [class="proton"] floating enabled
-for_window [class="floating"] floating enabled
-for_window [class="Bitwarden"] floating enabled
-

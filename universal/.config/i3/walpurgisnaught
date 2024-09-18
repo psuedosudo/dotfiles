@@ -1,5 +1,0 @@
-# i3 config file (v4)
-
-#exec --no-startup-id xrandr --output DP-3 --primary --mode 1440x900 --pos 0x0 --rotate normal --output HDMI-0 --off
-exec --no-startup-id xrandr --output HDMI-0 --mode 1920x1080 --pos 0x0 --rotate normal --output DP-5 --primary --mode 1440x900 --pos 240x1080 --rotate normal
-exec --no-startup-id feh --bg-fill /home/lll/.wallpapers/1612486940878.jpg

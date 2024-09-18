@@ -1,5 +1,0 @@
-while [[ True ]]; do
-  clear
-  duf
-  sleep 20
-done

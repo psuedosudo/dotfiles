@@ -1,3 +1,0 @@
-#!/bin/bash
-sleep 5
-pactl load-module module-loopback source=alsa_input.usb-Blue_Microphones_Yeti_Stereo_Microphone-00.analog-stereo sink=input

@@ -1,8 +1,0 @@
-#!/bin/bash
-while [[ True ]]; do
-  killall batsignal
-  batsignal -I ~/.scripts/bat.png \
-  -w 50 -W 'Battery Low' \
-  -c 25 -C 'Battery Very Low' \
-  -d 10 -D 'Battery Critically Low'
-done

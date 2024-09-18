@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+# This script launches a Windows executable using Proton within a Linux environment.
+# It requires exactly one argument: the path to the executable to run.
+# It sets up a separate Proton prefix for each executable to avoid conflicts.
+# Usage: proton <path-to-executable>
+#
+# Taken from: https://gist.github.com/shmup/4e7050d50e1db2e9fc4071bf31efa934
+
+PROTON_ROOT="$HOME/.proton"
+STEAM_ROOT="$HOME/.steam/root"
+PROTON_VER="Proton - Experimental"
+GAME_ROOT="$(dirname "$1")"
+GAME="$(basename "$1")"
+
+cd "$GAME_ROOT" || exit
+
+mkdir -p "$PROTON_ROOT/$GAME"
+export STEAM_COMPAT_DATA_PATH="$PROTON_ROOT/$GAME"
+export STEAM_COMPAT_CLIENT_INSTALL_PATH="$STEAM_ROOT"
+
+if [ "$#" == 2 ]; then
+  "$STEAM_ROOT/steamapps/common/$PROTON_VER/proton" run "$2" >/dev/null 2>&1
+else
+  "$STEAM_ROOT/steamapps/common/$PROTON_VER/proton" run "$1" >/dev/null 2>&1
+  echo "$#"
+fi

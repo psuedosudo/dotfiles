@@ -1,3 +1,0 @@
-sudo ip link set up enp4s0
-sudo dhcpcd
-startx
