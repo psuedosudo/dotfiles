@@ -1,5 +1,5 @@
 #.gitignore
-lazy-lock.json
+*lazy-lock.json*
 
 # generic python data
 __pycache__/
@@ -10,4 +10,3 @@ __init__.py
 
 # nvim plugin install data
 plugged/
-
