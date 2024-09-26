@@ -23,6 +23,9 @@ return {
         name = "My Vault",
         path = "~/Notes/My Vault",
       },
+      overrides = {
+        notes_subdir = "Notes",
+      },
 
     -- see below for full list of options 👇
     },

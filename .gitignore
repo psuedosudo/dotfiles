@@ -1,5 +1,6 @@
 #.gitignore
 *lazy-lock.json*
+userstate.cbor
 
 # generic python data
 __pycache__/
