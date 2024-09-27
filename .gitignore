@@ -1,5 +1,6 @@
 #.gitignore
-*lazy-lock.json*
+lazy-lock.json
+config/nvim/lazy-lock.json
 userstate.cbor
 
 # generic python data

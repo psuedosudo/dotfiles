@@ -3,17 +3,37 @@
 """
     Custom script for symlinking my dotfiles.
 """
+
 import os
 import pathlib
-home = os.path.expanduser("~")
 
+home = os.path.expanduser("~")
+files = pathlib.Path(f"{home}/.files")
+configs_path = f"{files}/config"
+scripts_path = f"{files}/scripts"
+configs = next(os.walk(configs_path))[1]
+
+
+# Standalone configs
+# zshrc
+try:
+    os.symlink(f"{configs_path}/zshrc", f"{home}/.zshrc")
+except FileExistsError:
+    os.copy(f"{home}/.zshrc", f"{home}/.zshrc.bak")
+    os.remove(f"{home}/.zshrc")
+    os.symlink(f"{configs_path}/zshrc", f"{home}/.zshrc")
+
+
+# Symlink scripts for .files
 try:
     os.symlink(f"{home}/.files/scripts", f"{home}/.scripts")
 except FileExistsError:
-    pass
+    os.copy(f"{home}/.scripts", f"{home}/.scripts.bak")
+    os.remove(f"{home}/.scripts")
+    os.symlink(f"{home}/.files/scripts", f"{home}/.scripts")
 
-configs_path = f"{home}/.files/config"
-configs = next(os.walk(configs_path))[1]
+
+# Symlink configs for .config
 for config in configs:
     try:
         os.symlink(f"{configs_path}/{config}", f"{home}/.config/{config.split("/")[-1]}")
