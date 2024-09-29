@@ -1,0 +1,8 @@
+#!/bin/bash
+
+clear
+dig +short txt ch whoami.cloudflare @1.0.0.1
+sudo openvpn --config ~/.ovpn/pia.texas.ovpn --daemon
+sleep 1
+~/.scripts/dnsleaktest
+systemd-resolve --status

@@ -1,0 +1,5 @@
+yay -Sy
+yay -S --needed --noconfirm archlinux-keyring
+yay -S --needed --noconfirm yay
+yay -Su --noconfirm
+flatpak upgrade --noninteractive
