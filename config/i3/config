@@ -25,7 +25,7 @@ gaps top 19
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id picom
-exec --no-startup-id polybar
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id oneko -sakura -bg '#DCD7BA' -fg '#1F1F28' -tofocus -speed 15 & disown
 
 exec --no-startup-id feh --bg-fill ~/.wallpaper.png

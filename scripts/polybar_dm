@@ -1,0 +1,3 @@
+#!/bin/bash
+polybar --reload mybar1 &
+polybar --reload mybar2 &

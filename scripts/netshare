@@ -2,4 +2,3 @@
 sonobus & disown
 com.symless.synergy & disown
 qjackctl --start & disown
-
